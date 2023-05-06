@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:share_plus/share_plus.dart';
 
+import 'document_view.dart';
 import 'utils.dart';
 
 class HistoryView extends StatefulWidget {
@@ -60,8 +61,8 @@ class _HistoryViewState extends State<HistoryView> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => ImageWidget(
-                            imageUrl: _results[selectedValue],
+                      builder: (context) => DocumentView(
+                            filePath: _results[selectedValue],
                           )),
                 );
               },

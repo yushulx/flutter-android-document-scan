@@ -9,17 +9,6 @@ import 'package:permission_handler/permission_handler.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
-class ImageWidget extends StatelessWidget {
-  final String imageUrl;
-
-  const ImageWidget({super.key, required this.imageUrl});
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(child: Image.file(File(imageUrl)));
-  }
-}
-
 Widget createURLString(String text) {
   // Create a regular expression to match URL strings.
   RegExp urlRegExp = RegExp(

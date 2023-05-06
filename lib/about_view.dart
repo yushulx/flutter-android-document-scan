@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'utils.dart';
 
-class InfoView extends StatelessWidget {
+class AboutView extends StatelessWidget {
   final String title;
-  const InfoView({super.key, required this.title});
+  const AboutView({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {

@@ -117,7 +117,7 @@ class _MyAppPageState extends State<MyAppPage>
         children: [
           HomeView(title: 'Web TWAIN Demo', controller: _controller),
           const HistoryView(title: 'History'),
-          const InfoView(title: 'About the SDK'),
+          const AboutView(title: 'About the SDK'),
         ],
       ),
       bottomNavigationBar: TabBar(
