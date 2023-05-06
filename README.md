@@ -12,7 +12,6 @@ The project demonstrates how to create an Android document-scanning app in Flutt
 flutter run
 ```
 
-![ESCL scanner discovered in Android app](https://www.dynamsoft.com/codepool/img/2023/05/android-escl-document-scanner.jpg)
+https://user-images.githubusercontent.com/2202306/236609804-da5ff939-3a8c-4eb8-9c7c-13b6f2149d03.mp4
 
 
-![Flutter Android document scan capture app](https://www.dynamsoft.com/codepool/img/2023/05/flutter-android-document-scan-capture.jpg)
