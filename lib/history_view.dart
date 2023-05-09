@@ -73,7 +73,6 @@ class _HistoryViewState extends State<HistoryView> {
                 if (selectedValue == -1) {
                   return;
                 }
-                // Show the file in the image viewer
                 await Share.shareXFiles([XFile(_results[selectedValue])],
                     text: 'Check out this image!');
               },
