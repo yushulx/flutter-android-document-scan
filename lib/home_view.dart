@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 import 'package:webview_flutter/webview_flutter.dart';
@@ -34,7 +36,13 @@ class _HomeViewState extends State<HomeView>
           ),
         ],
       ),
-      body: WebViewWidget(controller: widget.controller),
+      body: WebViewWidget(controller: widget.controller,
+          // https://api.flutter.dev/flutter/widgets/AndroidView/gestureRecognizers.html
+          gestureRecognizers: <Factory<OneSequenceGestureRecognizer>>{
+            Factory<OneSequenceGestureRecognizer>(
+              () => EagerGestureRecognizer(),
+            ),
+          }),
     );
   }
 }

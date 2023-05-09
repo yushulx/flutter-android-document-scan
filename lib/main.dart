@@ -47,13 +47,16 @@ class _MyAppPageState extends State<MyAppPage>
 
     late final PlatformWebViewControllerCreationParams params;
     params = const PlatformWebViewControllerCreationParams();
-
-    _controller = WebViewController.fromPlatformCreationParams(
-      params,
-      onPermissionRequest: (WebViewPermissionRequest request) {
-        request.grant();
-      },
-    )
+    _controller = WebViewController(
+        onPermissionRequest: (WebViewPermissionRequest request) {
+      request.grant();
+    })
+      // _controller = WebViewController.fromPlatformCreationParams(
+      //   params,
+      //   onPermissionRequest: (WebViewPermissionRequest request) {
+      //     request.grant();
+      //   },
+      // )
       ..addJavaScriptChannel(
         'ImageData',
         onMessageReceived: (JavaScriptMessage message) {
@@ -114,6 +117,7 @@ class _MyAppPageState extends State<MyAppPage>
     return Scaffold(
       body: TabBarView(
         controller: _tabController,
+        physics: const NeverScrollableScrollPhysics(),
         children: [
           HomeView(title: 'Web TWAIN Demo', controller: _controller),
           const HistoryView(title: 'History'),
