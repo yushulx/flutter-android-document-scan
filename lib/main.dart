@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:webview_flutter_android/webview_flutter_android.dart';
 
@@ -39,14 +40,15 @@ class _MyAppPageState extends State<MyAppPage>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
   late WebViewController _controller;
+  final ImagePicker _picker = ImagePicker();
 
   @override
   void initState() {
     super.initState();
     _tabController = TabController(vsync: this, length: 3);
 
-    late final PlatformWebViewControllerCreationParams params;
-    params = const PlatformWebViewControllerCreationParams();
+    // late final PlatformWebViewControllerCreationParams params;
+    // params = const PlatformWebViewControllerCreationParams();
     _controller = WebViewController(
         onPermissionRequest: (WebViewPermissionRequest request) {
       request.grant();
@@ -105,9 +107,18 @@ class _MyAppPageState extends State<MyAppPage>
     // _controller.clearLocalStorage();
 
     if (_controller.platform is AndroidWebViewController) {
-      AndroidWebViewController.enableDebugging(true);
+      // AndroidWebViewController.enableDebugging(true);
       (_controller.platform as AndroidWebViewController)
           .setMediaPlaybackRequiresUserGesture(false);
+      (_controller.platform as AndroidWebViewController)
+          .setOnShowFileSelector((params) async {
+        final XFile? image =
+            await _picker.pickImage(source: ImageSource.gallery);
+        if (image != null) {
+          return [image.path];
+        }
+        return [""];
+      });
     }
     requestCameraPermission();
   }
