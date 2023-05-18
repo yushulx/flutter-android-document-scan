@@ -12,6 +12,8 @@ The project demonstrates how to create an Android document-scanning app in Flutt
 flutter run
 ```
 
-https://user-images.githubusercontent.com/2202306/236609804-da5ff939-3a8c-4eb8-9c7c-13b6f2149d03.mp4
+https://github.com/yushulx/flutter-android-document-scan/assets/2202306/5a4405bb-3604-4267-9997-bb7e6aab876f
+
+
 
 
